@@ -1,7 +1,6 @@
 <template>
   <div>
     <el-button type="primary">测试</el-button>
-    <el-input />
   </div>
 </template>
 

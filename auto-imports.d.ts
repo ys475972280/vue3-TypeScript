@@ -2,6 +2,5 @@
 // We suggest you to commit this file into source control
 declare global {
   const ElButton: typeof import('element-plus/es')['ElButton']
-  const ElInput: typeof import('element-plus/es')['ElInput']
 }
 export {}

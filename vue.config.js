@@ -2,6 +2,20 @@
 const AutoImport = require("unplugin-auto-import/webpack")
 const Components = require("unplugin-vue-components/webpack")
 const { ElementPlusResolver } = require("unplugin-vue-components/resolvers")
+const MODE = process.env.NODE_ENV
+const ProxyTable = {
+  development: {
+    "/api": {
+      target: "https://mall.cnzhiyuanhui.com",
+      //target: "https://malldev.cnzhiyuanhui.com",
+      changeOrigin: true, //跨域
+      pathRewrite: {
+        "^/api": "/"
+      }
+    }
+  }
+}
+console.log(ProxyTable[MODE])
 module.exports = {
   //  1.配置方式一: CLI提供的属性
   //outputDir: "./build",
@@ -20,6 +34,9 @@ module.exports = {
         resolvers: [ElementPlusResolver()]
       })
     ]
+  },
+  devServer: {
+    proxy: ProxyTable[MODE]
   }
   // configureWebpack: (config) => {
   //    config.resolve.alias = {
