@@ -15,7 +15,6 @@ const ProxyTable = {
     }
   }
 }
-console.log(ProxyTable[MODE])
 module.exports = {
   //  1.配置方式一: CLI提供的属性
   //outputDir: "./build",
@@ -37,7 +36,8 @@ module.exports = {
   },
   devServer: {
     proxy: ProxyTable[MODE]
-  }
+  },
+  publicPath: "./"
   // configureWebpack: (config) => {
   //    config.resolve.alias = {
   //      "@": path.resolve(__dirname, "src"),
