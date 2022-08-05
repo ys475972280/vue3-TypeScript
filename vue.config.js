@@ -6,7 +6,7 @@ const MODE = process.env.NODE_ENV
 const ProxyTable = {
   development: {
     "/api": {
-      target: "https://mall.cnzhiyuanhui.com",
+      target: "http://152.136.185.210:5000",
       //target: "https://malldev.cnzhiyuanhui.com",
       changeOrigin: true, //跨域
       pathRewrite: {
