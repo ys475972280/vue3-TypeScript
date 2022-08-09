@@ -10,7 +10,7 @@
         </el-header>
         <el-main class="page-container">
           <div class="page-info">
-            <router-view />
+            <router-view :key="key" />
           </div>
         </el-main>
       </el-container>
@@ -19,10 +19,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue"
+import { defineComponent, ref, computed } from "vue"
 import { NavMenu } from "@/components/nav-menu/index"
 import { NavHeader } from "@/components/nav-header/index"
-
+import { useRoute } from "vue-router"
 export default defineComponent({
   components: {
     NavMenu,
@@ -34,9 +34,13 @@ export default defineComponent({
       isCollapse.value = isFold
       console.log(isFold)
     }
+    const route = useRoute()
+    console.log("main页面的route", route.path)
+    const key = route.path
     return {
       isCollapse,
-      handleFoldChange
+      handleFoldChange,
+      key
     }
   }
 })
