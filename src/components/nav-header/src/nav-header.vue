@@ -5,7 +5,9 @@
       <el-icon :size="30" v-else><Expand /></el-icon>
     </div>
     <div class="content">
-      <div>面包屑</div>
+      <div>
+        <NavBreadcrumb />
+      </div>
       <UserInfo />
     </div>
   </div>
@@ -15,11 +17,13 @@
 import { defineComponent, ref } from "vue"
 import { Fold, Expand } from "@element-plus/icons-vue"
 import UserInfo from "./user-info.vue"
+import NavBreadcrumb from "./nav-breadcrumb.vue"
 export default defineComponent({
   components: {
     Fold,
     Expand,
-    UserInfo
+    UserInfo,
+    NavBreadcrumb
   },
   emits: ["foldChange"],
   setup(props, { emit }) {
