@@ -1,6 +1,7 @@
 type IFormType = "input" | "password" | "select" | "datepicker"
 
 export interface IFormItem {
+  field: string
   label: string
   rules?: any[]
   placeholder?: any
@@ -14,6 +15,6 @@ export interface IFormItem {
 export interface IForm {
   formItem: IFormItem[]
   labelWidth?: string
-  colLayout: any
-  itemStyle: any
+  colLayout?: any
+  itemStyle?: any
 }
