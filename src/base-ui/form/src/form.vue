@@ -100,6 +100,7 @@ export default defineComponent({
 
 <style scoped lang="less">
 .ys-form {
-  padding-top: 22px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 </style>
