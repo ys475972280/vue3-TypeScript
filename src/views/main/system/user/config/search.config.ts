@@ -1,6 +1,6 @@
 import { IForm } from "@/base-ui/form/types"
 export const searchFormConfig: IForm = {
-  labelWidth: "120px",
+  // labelWidth: "120px",
   itemStyle: {
     padding: "0 0"
   },

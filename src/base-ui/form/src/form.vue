@@ -67,8 +67,8 @@ export default defineComponent({
       default: () => []
     },
     labelWidth: {
-      type: String,
-      default: "100px"
+      type: String
+      // default: "100px"
     },
     itemStyle: {
       type: Object,
@@ -77,8 +77,8 @@ export default defineComponent({
     colLayout: {
       type: Object,
       default: () => ({
-        xl: 8,
-        lg: 8,
+        xl: 6,
+        lg: 6,
         md: 12,
         sm: 24,
         xs: 24
@@ -87,7 +87,7 @@ export default defineComponent({
   },
   emits: ["update:modelValue"],
   setup(props, { emit }) {
-    const formData = ref({ ...props })
+    const formData = ref({ ...props.modelValue })
     watch(formData, (newValue) => emit("update:modelValue", newValue), {
       deep: true
     })
@@ -102,5 +102,8 @@ export default defineComponent({
 .ys-form {
   padding: 20px;
   box-sizing: border-box;
+  .footer {
+    text-align: end;
+  }
 }
 </style>
